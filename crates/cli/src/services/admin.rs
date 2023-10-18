@@ -44,12 +44,9 @@ impl Admin {
     }
 
     pub async fn update_app(&mut self, code: Vec<u8>) -> Result<()> {
-        let response = self
-            .client
+        self.client
             .update_app(Request::new(UpdateAppRequest { code }))
             .await?;
-
-        println!("RESPONSE={:?}", response);
 
         Ok(())
     }
