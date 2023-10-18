@@ -1,0 +1,22 @@
+[package]
+name = "unit-node"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+unit-utils = { path = "../utils" }
+unit-crossbar = { path = "../crossbar" }
+unit-index = { path = "../index" }
+unit-abi = { path = "../abi" }
+unit-runtime-proto = { path = "../runtime-proto" }
+unit-pubsub = { path = "../pubsub" }
+wasmer = {version = "4.0.0", features = ["cranelift"]}
+wasmer-wasix = "0.15.0"
+tokio = { version = "1.33.0", features = ["full"] }
+futures = "0.3"
+axum = {version = "0.6.18", features = ["ws"]}
+serde = { version = "1.0.189", features = ["derive"] }
+log = "0.4.20"
+env_logger = "0.10.0"
+
+

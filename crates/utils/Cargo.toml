@@ -1,0 +1,10 @@
+[package]
+name = "unit-utils"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lazy_static = "1.4.0"
+dotenv = "0.15.0"
+anyhow = "1.0.75"
+uuid = { version = "1.4.1", features = [ "v4", "fast-rng" ] }

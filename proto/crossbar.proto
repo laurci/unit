@@ -1,0 +1,25 @@
+syntax = "proto3";
+package unit.crossbar;
+
+message PushBinary {
+  bytes message = 1;
+}
+
+message PushText {
+  string message = 1;
+}
+
+message PushResponse {}
+
+message PushRequest {
+  string topic = 1;
+  oneof message {
+    PushBinary binary = 2;
+    PushText text = 3;
+  }
+}
+
+service Crossbar {
+  rpc Push (PushRequest) returns (PushResponse);
+  rpc PushStream (stream PushRequest) returns (PushResponse);
+}

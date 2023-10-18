@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  redis:
+    container_name: unit-redis
+    image: redis:7-alpine
+    ports:
+      - 6301:6379

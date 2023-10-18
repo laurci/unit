@@ -1,0 +1,9 @@
+[package]
+name = "demo-push-crossbar"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.33.0", features = ["full"] }
+unit-utils = { path = "../../crates/utils" }
+unit-crossbar-client = { path = "../../crates/crossbar-client" }

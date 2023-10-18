@@ -1,0 +1,21 @@
+[package]
+name = "unit-api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+unit-utils = { path = "../utils" }
+unit-crossbar = { path = "../crossbar" }
+unit-abi = { path = "../abi" }
+unit-index = { path = "../index" }
+unit-pubsub = { path = "../pubsub" }
+tokio = { version = "1.33.0", features = ["full"] }
+futures = "0.3"
+prost = "0.12.1"
+tonic = "0.10.2"
+log = "0.4.20"
+env_logger = "0.10.0"
+
+
+[build-dependencies]
+tonic-build = "0.10.2"

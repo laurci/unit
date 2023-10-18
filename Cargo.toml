@@ -1,0 +1,33 @@
+[workspace]
+resolver = "2"
+
+members = [
+  "crates/utils",
+  "crates/abi",
+  "crates/crossbar",
+  "crates/runtime-proto",
+  "crates/index",
+
+  "crates/framework-meta",
+  "crates/framework",
+
+  "crates/pubsub",
+
+  "crates/cli",
+  "crates/node",
+  "crates/api",
+
+  "crates/crossbar-client",
+
+  "examples/hello-world",
+  "examples/push-crossbar"
+]
+
+default-members = [
+  "crates/cli",
+  "crates/node",
+  "crates/api",
+
+  "examples/push-crossbar"
+]
+

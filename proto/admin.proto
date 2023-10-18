@@ -1,0 +1,13 @@
+syntax = "proto3";
+package unit.admin;
+
+message UpdateAppRequest {
+  bytes code = 1;
+}
+
+message UpdateAppResponse {}
+
+
+service Admin {
+  rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
+}
