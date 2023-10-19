@@ -49,4 +49,5 @@ services:
   dashboard-ui:
     container_name: dashboard-ui
     image: laurci/unit-dashboard-ui:latest
-    ports: 8081:80
+    ports:
+      - 8081:80
