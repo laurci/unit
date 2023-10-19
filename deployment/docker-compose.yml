@@ -3,6 +3,13 @@ services:
   redis:
     container_name: unit-redis
     image: redis:7-alpine
+  db:
+    container_name: unit-postgres
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_DB: unit
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
   api:
     container_name: unit-api
     image: laurci/unit:latest
@@ -28,3 +35,13 @@ services:
       - UNIT_REDIS_HOST=unit-redis
       - UNIT_REDIS_PORT=6379
       - UNIT_STORAGE_PATH=/data
+  dashboard-api:
+    container_name: dashboard-api
+    image: laurci/unit-dashboard-api:latest
+    ports:
+      - 8080:8080
+    environment:
+      - NODE_PORT=8080
+      - DATABASE_URL=postgres://user:password@unit-postgres:5432/unit
+      - REDIS_URL=redis://unit-redis:6379
+      - AUTH_TOKEN=ilovecats
