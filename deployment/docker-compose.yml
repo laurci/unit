@@ -46,3 +46,7 @@ services:
       - DATABASE_URL=postgres://user:password@unit-postgres:5432/unit
       - REDIS_URL=redis://unit-redis:6379
       - AUTH_TOKEN=ilovecats
+  dashboard-ui:
+    container_name: dashboard-ui
+    image: laurci/unit-dashboard-ui:latest
+    ports: 8081:80
