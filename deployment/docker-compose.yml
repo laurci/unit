@@ -9,16 +9,22 @@ services:
     command: unit-api
     ports:
       - 6448:6448
+    volumes:
+      - ./data:/data
     environment:
       - UNIT_REDIS_HOST=unit-redis
       - UNIT_REDIS_PORT=6379
       - UNIT_GRPC_API_KEY=ilovecats
+      - UNIT_STORAGE_PATH=/data
   node:
     container_name: unit-node
     image: laurci/unit:latest
     command: unit-node
     ports:
       - 6447:6447
+    volumes:
+      - ./data:/data
     environment:
       - UNIT_REDIS_HOST=unit-redis
       - UNIT_REDIS_PORT=6379
+      - UNIT_STORAGE_PATH=/data
